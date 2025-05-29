@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+<title>3D Image Gallery</title> 
+<link rel="stylesheet" href="estilos de galeria.css"> 
+</head>
+<body>
+<div class="container"> 
+<div class="box"> 
+
+<span style="--i:1;"><img src="john.jfif" alt=""></span>
+<span style="--i:2;"><img src="ronda.jfif" alt=""></span>
+<span style="--i:3;"><img src="chayanne.jfif" alt=""></span>
+<span style="--i:4;"><img src="sucesor.jfif" alt=""></span>
+<span style="--i:5;"><img src="moto.jfif" alt=""></span>
+<span style="--i:6;"><img src="moto2.jfif" alt=""></span>
+<span style="--i:7;"><img src="mujer.jfif" alt=""></span>
+<span style="--i:8;"><img src="porta.jfif" alt=""></span>
+</div>
+
+<div class="btns">
+<div class="btn prev"></div> 
+<div class="btn next"></div> 
+</div>
+</div>
+<script>
+
+let prev = document.querySelector('.prev'); 
+let next = document.querySelector('.next'); 
+let box = document.querySelector('.box'); 
+let dagrees = 0; 
+
+prev.addEventListener('click', function() {
+dagrees -= 45 ;  // Aumenta 45 grados (rotación hacia un lado)
+box.style.transform = `perspective(1000px) rotateY(${dagrees}deg)`; 
+
+});
+
+next.addEventListener('click', function() {
+dagrees += 45; 
+
+box.style.transform = `perspective(1000px) rotateY(${dagrees}deg)`; 
+});
+</script>
+</body>
+</html>
